@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,68 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BarChart" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s6i-dD-ymN">
+                                <rect key="frame" x="0.0" y="792" width="414" height="70"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mNy-P6-Xan">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="S8Z-eK-76q"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LFC-H0-jRL">
+                                        <rect key="frame" x="141.66666666666666" y="16.666666666666629" width="130.99999999999997" height="37"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="18"/>
+                                        <state key="normal" title="Show BarChart">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="showBarChart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mKm-uG-bs9"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="mNy-P6-Xan" firstAttribute="leading" secondItem="s6i-dD-ymN" secondAttribute="leading" id="1bM-PE-M1m"/>
+                                    <constraint firstItem="LFC-H0-jRL" firstAttribute="centerY" secondItem="s6i-dD-ymN" secondAttribute="centerY" id="55B-hq-dGv"/>
+                                    <constraint firstItem="mNy-P6-Xan" firstAttribute="top" secondItem="s6i-dD-ymN" secondAttribute="top" id="KVl-Za-OOl"/>
+                                    <constraint firstAttribute="trailing" secondItem="mNy-P6-Xan" secondAttribute="trailing" id="Q64-Gm-s1W"/>
+                                    <constraint firstItem="LFC-H0-jRL" firstAttribute="centerX" secondItem="s6i-dD-ymN" secondAttribute="centerX" id="QfH-8j-X0u"/>
+                                    <constraint firstAttribute="height" constant="70" id="ZK6-sd-byw"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KaQ-pR-0kf" customClass="MacawChartView" customModule="BarChart" customModuleProvider="target">
+                                <rect key="frame" x="32" y="273" width="350" height="350"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="KaQ-pR-0kf" secondAttribute="height" multiplier="1:1" id="0yt-IY-OtW"/>
+                                    <constraint firstAttribute="width" constant="350" id="cFK-kH-DL4"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="s6i-dD-ymN" secondAttribute="bottom" id="DWl-ZO-wrx"/>
+                            <constraint firstItem="KaQ-pR-0kf" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="NBb-aX-quZ"/>
+                            <constraint firstItem="s6i-dD-ymN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="leM-kG-eKT"/>
+                            <constraint firstItem="s6i-dD-ymN" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="rsn-m1-NYm"/>
+                            <constraint firstItem="KaQ-pR-0kf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="t9l-4b-FmS"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="chartView" destination="KaQ-pR-0kf" id="TBX-R7-dTg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-57.971014492753625" y="133.92857142857142"/>
         </scene>
     </scenes>
 </document>
